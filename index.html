@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamite Sports Learner (Badminton)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dynamite Sports Learner</h1>
+        <p>Your virtual badminton coach</p>
+    </header>
+    <nav>
+        <button id="dashboard-btn" class="nav-btn active">Dashboard</button>
+        <button id="coach-btn" class="nav-btn">Coach Chat</button>
+    </nav>
+    <main>
+        <section id="dashboard" class="section active">
+            <div id="progress">
+                <h2>Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p id="progress-text">0 / 5 missions completed</p>
+            </div>
+            <div id="missions">
+                <h2>Missions</h2>
+                <div class="mission-cards" id="mission-cards">
+                    <!-- Mission cards will be generated here -->
+                </div>
+            </div>
+        </section>
+        <section id="coach-chat" class="section">
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <div id="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Type your message...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
