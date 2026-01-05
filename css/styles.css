@@ -212,29 +212,195 @@ main {
     background: #004d40;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem;
-    }
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
 
-    header h1 {
-        font-size: 2rem;
-    }
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 0.5rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
 
-    nav {
-        flex-direction: column;
-    }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    .nav-btn {
-        margin: 0.25rem 0;
-    }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
 
-    main {
-        padding: 1rem;
-    }
+.scrollable-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+    background: #f9f9f9;
+}
 
-    .mission-cards {
-        grid-template-columns: 1fr;
-    }
+.equipment-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.25rem;
+}
+
+.equipment-item h3 {
+    margin: 0 0 5px 0;
+    cursor: pointer;
+}
+
+.equipment-item p {
+    margin: 5px 0;
+}
+
+.learn-more-btn {
+    background: #00796b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.learn-more-btn:hover {
+    background: #004d40;
+}
+
+.serve-step {
+    margin: 10px 0;
+}
+
+.serve-step input {
+    margin-right: 10px;
+}
+
+.coach-feedback {
+    background: #e0f2f1;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    display: none;
+}
+
+.coach-feedback.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Quiz styles */
+#quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#quiz-content {
+    margin-top: 1rem;
+}
+
+#start-quiz-btn {
+    background: #00796b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#start-quiz-btn:hover {
+    background: #004d40;
+}
+
+#current-question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-btn {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.option-btn:hover {
+    background: #e0e0e0;
+}
+
+.option-btn.correct {
+    background: #4caf50;
+    color: white;
+}
+
+.option-btn.incorrect {
+    background: #f44336;
+    color: white;
+}
+
+#next-btn {
+    background: #00796b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#next-btn:hover {
+    background: #004d40;
+}
+
+#quiz-results {
+    text-align: center;
+}
+
+.mission-card.completed {
+    animation: completePulse 0.5s;
+}
+
+@keyframes completePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
