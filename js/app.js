@@ -46,6 +46,22 @@ function loadMissions() {
             mission.completed = completedIds.includes(mission.id);
         });
     }
+    
+    // Check for 24-hour reset
+    const lastReset = localStorage.getItem('lastMissionReset');
+    const now = Date.now();
+    const twentyFourHours = 24 * 60 * 60 * 1000;
+    
+    if (!lastReset || (now - parseInt(lastReset)) > twentyFourHours) {
+        // Reset all missions
+        missions.forEach(mission => {
+            mission.completed = false;
+        });
+        localStorage.setItem('badmintonMissions', JSON.stringify([]));
+        localStorage.setItem('lastMissionReset', now.toString());
+        showCoachFeedback('Welcome back! Your missions have been reset for a fresh learning session. Let\'s get started! 🏸');
+    }
+    
     updateUnlocks();
 }
 
